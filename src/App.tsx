@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.styles.scss";
+import { Weather } from "./@typings/weather";
 
 interface AppProps {
-  weather: any;
+  weather: Weather;
   getWeather: (keyword: string) => void;
 }
 
