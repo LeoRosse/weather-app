@@ -1,10 +1,11 @@
 import React from "react";
+import "./App.styles.scss";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <main className="main">
       <input type="text" />
-    </div>
+    </main>
   );
 };
 
