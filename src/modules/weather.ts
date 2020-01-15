@@ -1,11 +1,9 @@
 import * as weatherActions from "../actions/weather";
 
-// ------------------------------------
 // Selectors
 
 export const weather = (state: any) => state.weather.weather;
 
-// ------------------------------------
 // Store & reducer
 
 const initialState = {
