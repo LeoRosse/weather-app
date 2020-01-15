@@ -28,7 +28,7 @@ export function getWeather(keyword: string) {
   return async (dispatch: any) => {
     dispatch(getWeatherStart());
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${keyword}&lang=it&units=metric&appid=ea69afac7ee734ece5f456bf9dd27957`
+      `https://api.openweathermap.org/data/2.5/weather?q=${keyword}&units=metric&appid=ea69afac7ee734ece5f456bf9dd27957`
     );
     if (!response.ok) {
       return dispatch(getWeatherFailure("Unable to fetch"));

@@ -24,6 +24,7 @@ const App: React.FC<AppProps> = ({ weather, getWeather }) => {
         onChange={e => setKeywords(e.target.value)}
         value={keywords}
         className="main__input"
+        placeholder="Choose a city..."
       />
       <WeatherInfo showInfo={weather !== null} weather={weather} />
     </main>

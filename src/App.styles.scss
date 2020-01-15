@@ -1,11 +1,29 @@
+$input-background: rgba(57, 63, 84, 0.8);
+$input-text-active: #BFD2FF;
+
 .main {
-  padding: 10px;
   display: flex;
+  height: 100vh;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   &__input {
     width: 80%;
     margin: 20px 0px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding: 1.4rem 2rem 1.6rem;
+    background: $input-background;
+    color: $input-text-active;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    border-radius: 10px;
   }
 }
