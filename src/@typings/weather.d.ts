@@ -11,7 +11,7 @@ export interface Weather {
     id: number;
     main: string;
     description: string;
-  };
+  }[];
   name: string;
   sys: {
     country: string;

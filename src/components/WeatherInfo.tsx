@@ -9,4 +9,9 @@ interface WeatherInfoProps {
 export const WeatherInfo: React.FC<WeatherInfoProps> = ({
   showInfo,
   weather
-}) => (showInfo ? <>{weather.name}</> : null);
+}) =>
+  showInfo ? (
+    <>
+      {weather.name} {weather.weather[0].description}
+    </>
+  ) : null;

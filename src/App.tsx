@@ -23,6 +23,7 @@ const App: React.FC<AppProps> = ({ weather, getWeather }) => {
         onKeyPress={search}
         onChange={e => setKeywords(e.target.value)}
         value={keywords}
+        className="main__input"
       />
       <WeatherInfo showInfo={weather !== null} weather={weather} />
     </main>
