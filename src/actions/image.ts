@@ -1,3 +1,5 @@
+import { Image } from "../@typings/image";
+
 // Constants
 export const GET_IMAGE_START = "image/GET_IMAGE_START";
 export const GET_IMAGE_SUCCESS = "image/GET_IMAGE_SUCCESS";
@@ -10,7 +12,7 @@ export function getImageStart() {
   };
 }
 
-export function getImageSuccess(image: any) {
+export function getImageSuccess(image: Image) {
   return {
     type: GET_IMAGE_SUCCESS,
     payload: image

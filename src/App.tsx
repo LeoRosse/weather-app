@@ -30,7 +30,7 @@ const App: React.FC<AppProps> = ({ weather, getWeather, image, getImage }) => {
         placeholder="Choose a city..."
       />
       <WeatherInfo
-        showInfo={weather !== null}
+        showInfo={weather !== null && image !== null}
         weather={weather}
         image={image}
       />

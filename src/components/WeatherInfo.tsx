@@ -1,10 +1,11 @@
 import React from "react";
 import { Weather } from "../@typings/weather";
+import { Image } from "../@typings/image";
 
 interface WeatherInfoProps {
   showInfo: boolean;
   weather: Weather;
-  image: any;
+  image: Image;
 }
 
 export const WeatherInfo: React.FC<WeatherInfoProps> = ({
@@ -14,7 +15,7 @@ export const WeatherInfo: React.FC<WeatherInfoProps> = ({
 }) =>
   showInfo ? (
     <div>
-      {window.console.log(image, "image")}
+      <img src={image.urls.small} alt="City" />
       <h1>{weather.name}</h1>
       <p>
         {weather.weather[0].description}

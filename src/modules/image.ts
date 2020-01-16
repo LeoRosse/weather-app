@@ -2,7 +2,7 @@ import * as imageActions from "../actions/image";
 
 // Selectors
 
-export const image = (state: any) => state.image;
+export const image = (state: any) => state.image.image;
 
 // Store & reducer
 

@@ -12,9 +12,10 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = (state: any) => {
+  window.console.log(state);
   return {
     weather: weather(state),
-    image: image(image)
+    image: image(state)
   };
 };
 
