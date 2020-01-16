@@ -4,14 +4,17 @@ import { Weather } from "../@typings/weather";
 interface WeatherInfoProps {
   showInfo: boolean;
   weather: Weather;
+  image: any;
 }
 
 export const WeatherInfo: React.FC<WeatherInfoProps> = ({
   showInfo,
-  weather
+  weather,
+  image
 }) =>
   showInfo ? (
     <div>
+      {window.console.log(image, "image")}
       <h1>{weather.name}</h1>
       <p>
         {weather.weather[0].description}

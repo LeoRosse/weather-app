@@ -1,3 +1,5 @@
+import { Weather } from "../@typings/weather";
+
 // Constants
 export const GET_WEATHER_START = "weather/GET_WEATHER_START";
 export const GET_WEATHER_SUCCESS = "weather/GET_WEATHER_SUCCESS";
@@ -10,7 +12,7 @@ export function getWeatherStart() {
   };
 }
 
-export function getWeatherSuccess(weather: any) {
+export function getWeatherSuccess(weather: Weather) {
   return {
     type: GET_WEATHER_SUCCESS,
     payload: weather
@@ -28,7 +30,7 @@ export function getWeather(keyword: string) {
   return async (dispatch: any) => {
     dispatch(getWeatherStart());
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${keyword}&units=metric&appid=ea69afac7ee734ece5f456bf9dd27957`
+      `https://api.openweathermap.org/data/2.5/weather?q=${keyword}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     );
     if (!response.ok) {
       return dispatch(getWeatherFailure("Unable to fetch"));

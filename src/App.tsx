@@ -5,14 +5,17 @@ import { WeatherInfo } from "./components/WeatherInfo";
 
 interface AppProps {
   weather: Weather;
+  image: any;
   getWeather: (keyword: string) => void;
+  getImage: (keyword: string) => void;
 }
 
-const App: React.FC<AppProps> = ({ weather, getWeather }) => {
+const App: React.FC<AppProps> = ({ weather, getWeather, image, getImage }) => {
   const [keywords, setKeywords] = React.useState("");
   const search = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       getWeather(keywords);
+      getImage(keywords);
       setKeywords("");
     }
   };
@@ -26,7 +29,11 @@ const App: React.FC<AppProps> = ({ weather, getWeather }) => {
         className="main__input"
         placeholder="Choose a city..."
       />
-      <WeatherInfo showInfo={weather !== null} weather={weather} />
+      <WeatherInfo
+        showInfo={weather !== null}
+        weather={weather}
+        image={image}
+      />
     </main>
   );
 };
