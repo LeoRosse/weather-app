@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.styles.scss";
 import { Weather } from "./@typings/weather";
-import { WeatherInfo } from "./components/WeatherInfo";
+import { WeatherInfo } from "./components/WeatherInfo/WeatherInfo";
 
 interface AppProps {
   weather: Weather;

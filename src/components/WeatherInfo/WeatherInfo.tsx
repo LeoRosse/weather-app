@@ -1,6 +1,6 @@
 import React from "react";
-import { Weather } from "../@typings/weather";
-import { Image } from "../@typings/image";
+import { Weather } from "../../@typings/weather";
+import { Image } from "../../@typings/image";
 
 interface WeatherInfoProps {
   showInfo: boolean;
@@ -14,9 +14,15 @@ export const WeatherInfo: React.FC<WeatherInfoProps> = ({
   image
 }) =>
   showInfo ? (
-    <div>
+    <div className="card">
       <img src={image.urls.small} alt="City" />
-      <h1>{weather.name}</h1>
+      <div className="title-content">
+        <h3>{weather.name}</h3>
+        <hr />
+        <div className="intro">
+          Yllamco laboris nisi ut aliquip ex ea commodo.
+        </div>
+      </div>
       <p>
         {weather.weather[0].description}
         <br />
