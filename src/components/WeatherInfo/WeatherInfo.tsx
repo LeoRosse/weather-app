@@ -30,11 +30,11 @@ export const WeatherInfo: React.FC<WeatherInfoProps> = ({
         <br />
         perceived temperature: {Math.round(weather.main.feels_like)}°C
         <br />
-        humidity: {Math.round(weather.main.humidity)}
+        humidity: {Math.round(weather.main.humidity)}%
         <br />
-        temperature max: {Math.round(weather.main.temp_max)}
+        temperature max: {Math.round(weather.main.temp_max)}°C
         <br />
-        temperature min: {Math.round(weather.main.temp_min)}
+        temperature min: {Math.round(weather.main.temp_min)}°C
       </p>
     </div>
   ) : null;
