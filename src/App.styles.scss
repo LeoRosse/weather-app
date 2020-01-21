@@ -1,5 +1,5 @@
 $input-background: rgba(57, 63, 84, 0.8);
-$input-text-active: #BFD2FF;
+$input-text-active: #bfd2ff;
 
 .main {
   display: flex;
@@ -25,5 +25,8 @@ $input-text-active: #BFD2FF;
     line-height: 2.4rem;
     vertical-align: middle;
     border-radius: 10px;
+    @media (max-width: 450px) {
+      width: auto;
+    }
   }
 }
