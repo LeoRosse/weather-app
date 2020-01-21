@@ -6,4 +6,10 @@ export interface Image {
     small: string;
     thumb: string;
   };
+  user: {
+    name: string;
+  };
+  location: {
+    title: string;
+  }
 }
