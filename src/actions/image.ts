@@ -1,4 +1,7 @@
 import { Image } from "../@typings/image";
+import { Action } from "redux";
+import { RootReducer } from "../modules";
+import { ThunkAction } from "redux-thunk";
 
 // Constants
 export const GET_IMAGE_START = "image/GET_IMAGE_START";
@@ -26,20 +29,20 @@ export function getImageFailure(errmessage: string) {
   };
 }
 
-export function getImage(keyword: string) {
-  return async (dispatch: any) => {
-    dispatch(getImageStart());
-    const response = await fetch(
-      `https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_IMAGE_API_KEY}&query=${keyword}&orientation=landscape`
-    );
-    if (!response.ok) {
-      return dispatch(getImageFailure("Unable to fetch"));
-    }
-    try {
-      const image = await response.json();
-      dispatch(getImageSuccess(image));
-    } catch (error) {
-      dispatch(getImageFailure(error.message));
-    }
-  };
-}
+export const getImage = (
+  keyword: string
+): ThunkAction<void, RootReducer, null, Action<string>> => async dispatch => {
+  dispatch(getImageStart());
+  const response = await fetch(
+    `https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_IMAGE_API_KEY}&query=${keyword}&orientation=landscape`
+  );
+  if (!response.ok) {
+    return dispatch(getImageFailure("Unable to fetch"));
+  }
+  try {
+    const image = await response.json();
+    dispatch(getImageSuccess(image));
+  } catch (error) {
+    dispatch(getImageFailure(error.message));
+  }
+};
