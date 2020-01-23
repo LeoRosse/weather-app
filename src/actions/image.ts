@@ -1,7 +1,5 @@
 import { Image } from "../@typings/image";
-import { Action } from "redux";
-import { RootReducer } from "../modules";
-import { ThunkAction } from "redux-thunk";
+import { AppThunk } from "../modules";
 
 // Constants
 export const GET_IMAGE_START = "image/GET_IMAGE_START";
@@ -29,9 +27,7 @@ export function getImageFailure(errmessage: string) {
   };
 }
 
-export const getImage = (
-  keyword: string
-): ThunkAction<void, RootReducer, null, Action<string>> => async dispatch => {
+export const getImage = (keyword: string): AppThunk => async dispatch => {
   dispatch(getImageStart());
   const response = await fetch(
     `https://api.unsplash.com/photos/random?client_id=${process.env.REACT_APP_IMAGE_API_KEY}&query=${keyword}&orientation=landscape`
