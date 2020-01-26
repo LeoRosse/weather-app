@@ -3,15 +3,14 @@ import { ImageActionTypes } from '../actions/image';
 import { Image } from "../@typings/image";
 
 //interfaces
-
 interface ImageState {
   image: Image | null;
   loading: boolean;
 }
-
 export interface ImageSelectorState {
   image: ImageState
 }
+
 // Selectors
 
 export const image = (state: ImageSelectorState) => state.image.image
