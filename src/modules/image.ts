@@ -1,17 +1,29 @@
 import * as imageActions from "../actions/image";
+import { ImageActionTypes } from '../actions/image';
+import { Image } from "../@typings/image";
 
+//interfaces
+
+interface ImageState {
+  image: Image | null;
+  loading: boolean;
+}
+
+export interface ImageSelectorState {
+  image: ImageState
+}
 // Selectors
 
-export const image = (state: any) => state.image.image;
+export const image = (state: ImageSelectorState) => state.image.image
 
 // Store & reducer
 
-const initialState = {
+const initialState: ImageState = {
   image: null,
   loading: false
 };
 
-export default function reducer(state = initialState, action: any) {
+export default function reducer(state = initialState, action: ImageActionTypes) {
   switch (action.type) {
     case imageActions.GET_IMAGE_START:
       return {
