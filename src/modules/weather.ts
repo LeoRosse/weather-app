@@ -1,4 +1,4 @@
-import * as weatherActions from "../actions/weather";
+import * as weatherActions from '../actions/weather';
 
 // Selectors
 
@@ -8,7 +8,7 @@ export const weather = (state: any) => state.weather.weather;
 
 const initialState = {
   weather: null,
-  loading: false
+  loading: false,
 };
 
 export default function reducer(state = initialState, action: any) {
@@ -16,18 +16,18 @@ export default function reducer(state = initialState, action: any) {
     case weatherActions.GET_WEATHER_START:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case weatherActions.GET_WEATHER_SUCCESS:
       return {
         ...state,
         weather: action.payload,
-        loading: false
+        loading: false,
       };
     case weatherActions.GET_WEATHER_FAILURE:
       return {
         ...state,
-        loading: false
+        loading: false,
       };
     default:
       return state;
