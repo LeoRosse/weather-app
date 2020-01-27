@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.styles.scss";
 import { Weather } from "./@typings/weather";
+import { Image } from "./@typings/image";
 import { WeatherInfo } from "./components/WeatherInfo/WeatherInfo";
 
 interface AppProps {
   weather: Weather;
-  image: any;
+  image: Image;
   getWeather: (keyword: string) => void;
   getImage: (keyword: string) => void;
 }
