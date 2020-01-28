@@ -38,10 +38,10 @@ export const WeatherInfo: React.FC<WeatherInfoProps> = ({ showInfo, weather, ima
           <label htmlFor="">temperature min:</label> {Math.round(weather.main.temp_min)}°C
         </span>
         <span>
-          <label htmlFor="">sunrise: </label> {convertTimeStampToDate(weather.sys.sunrise)}
+          <label htmlFor="">sunrise: </label> {convertTimeStampToDate(weather.sys.sunrise, weather.timezone)}
         </span>
         <span>
-          <label htmlFor="">sunset: </label> {convertTimeStampToDate(weather.sys.sunset)}
+          <label htmlFor="">sunset: </label> {convertTimeStampToDate(weather.sys.sunset, weather.timezone)}
         </span>
       </p>
     </div>

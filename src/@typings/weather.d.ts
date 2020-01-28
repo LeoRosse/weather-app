@@ -18,4 +18,5 @@ export interface Weather {
     sunrise: number;
     sunset: number;
   };
+  timezone: number;
 }
