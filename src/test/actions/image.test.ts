@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as imageActions from '../actions/image';
-import { Image } from '../@typings/image';
+import * as imageActions from '../../actions/image';
+import { Image } from '../../@typings/image';
 import fetchMock from 'fetch-mock';
 import expect from 'expect';
 
