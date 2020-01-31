@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 import { Weather } from '../../@typings/weather';
 import { Image } from '../../@typings/image';
 import './WeatherInfo.styles.scss';
