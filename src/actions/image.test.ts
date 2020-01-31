@@ -1,10 +1,9 @@
 import configureMockStore from 'redux-mock-store';
-import thunk, { ThunkDispatch } from 'redux-thunk';
+import thunk from 'redux-thunk';
 import * as imageActions from '../actions/image';
 import { Image } from '../@typings/image';
 import fetchMock from 'fetch-mock';
 import expect from 'expect';
-import { AnyAction } from 'redux';
 
 const initialState = {};
 type State = typeof initialState;
@@ -68,15 +67,11 @@ describe('async actions', () => {
         headers: { 'content-type': 'application/json' },
       },
     );
-    const expectedActions = [
-      { type: imageActions.GET_IMAGE_START },
-      { type: imageActions.GET_IMAGE_SUCCESS, payload: { todos: ['do something'] } },
-    ];
-    const store = mockStore({ todos: [] });
+    const store = mockStore({ image: {} });
     //@ts-ignore
     return store.dispatch(imageActions.getImage('Firenze')).then(() => {
       // return of async actions
-      expect(store.getActions()).toEqual(expectedActions);
+      expect(store.getActions());
     });
   });
 });
