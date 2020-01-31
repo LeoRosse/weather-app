@@ -3,7 +3,7 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 
 //components
-import { WeatherInfo } from '../../components/WeatherInfo/WeatherInfo';
+import { WeatherInfo } from '../../../components/WeatherInfo/WeatherInfo';
 
 let container: any = null;
 

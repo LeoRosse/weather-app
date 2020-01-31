@@ -1,8 +1,8 @@
-import React from 'react';
+import React from './node_modules/react';
 import { Weather } from '../../@typings/weather';
 import { Image } from '../../@typings/image';
 import './WeatherInfo.styles.scss';
-import { convertTimeStampToDate } from './utils';
+import { convertTimeStampToDate } from '../../utils/weatherInfo';
 interface WeatherInfoProps {
   showInfo: boolean;
   weather: Weather;
